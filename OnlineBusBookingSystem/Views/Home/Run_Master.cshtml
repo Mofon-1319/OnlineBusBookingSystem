@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<h2>Home</h2>
+<div class="nav-bar">
+    @Html.ActionLink("SignUp", "Register", "User")
+    @Html.ActionLink("SignIn", "Login", "User")
+</div>

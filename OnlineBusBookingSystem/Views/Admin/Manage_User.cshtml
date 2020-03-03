@@ -1,0 +1,65 @@
+﻿@model  IEnumerable<OnlineBusBookingSystem.Entity.Customer>
+
+@{
+    ViewBag.Title = "Manage_User";
+}
+
+<h2>Manage_User</h2>
+
+<table cellpadding="8" cellspacing="10" border="1">
+    
+    <tr>
+        <th>
+            UserId
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Password
+        </th>
+        <th>
+            DOB
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            Role
+        </th>
+    </tr>
+    @foreach (OnlineBusBookingSystem.Entity.Customer item in Model)
+    {
+        <tr>
+            <td>
+                @item.userId
+            </td>
+            <td>
+                @item.userName
+            </td>
+            <td>
+                @item.userPassword
+            </td>
+            <td>
+                @item.dateOfBirth
+            </td>
+            <td>
+                @item.userGender
+            </td>
+            <td>
+                @item.userPhone
+            </td>
+            <td>
+                @item.role
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { userId = item.userId })
+                @Html.ActionLink("Delete", "Delete", new { userId = item.userId })
+            </td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Back", "Welcome","User")

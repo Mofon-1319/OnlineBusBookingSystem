@@ -1,0 +1,62 @@
+﻿@model OnlineBusBookingSystem.Entity.Customer
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit","Admin",FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.userId)
+    @Html.AntiForgeryToken()
+
+    <table cellpadding="8" border="1">
+        <tr>
+            <th>
+                UserId
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                DOB
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Role
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.ValueFor(model => model.userId)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.userName)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.userPassword)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.dateOfBirth)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.userGender)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.userPhone)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.role)
+            </td>
+        </tr>
+    </table>
+    <input type="submit" />
+}

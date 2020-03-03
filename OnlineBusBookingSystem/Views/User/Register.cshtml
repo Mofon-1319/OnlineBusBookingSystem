@@ -1,0 +1,73 @@
+﻿@model OnlineBusBookingSystem.Models.Customer_Register
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Register", "User", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.userName, "Name")
+            </td>
+            <td>
+                @Html.EditorFor(model => model.userName)
+                @Html.ValidationMessageFor(model => model.userName, "", new { @class = "text-danger"})
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.userGender, "Gender")
+            </td>
+            <td>
+                @Html.RadioButtonFor(model => model.userGender, "Male") Male
+                @Html.RadioButtonFor(model => model.userGender, "Female") Female
+                @Html.ValidationMessageFor(model => model.userGender, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.userId, "Email-Id")
+            </td>
+            <td>
+                @Html.EditorFor(model => model.userId)
+                @Html.ValidationMessageFor(model => model.userId, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.userPassword, "Password")
+            </td>
+            <td>
+                @Html.EditorFor(model => model.userPassword)
+                @Html.ValidationMessageFor(model => model.userPassword, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.userPhone, "Phone")
+            </td>
+            <td>
+                @Html.EditorFor(model => model.userPhone)
+                @Html.ValidationMessageFor(model => model.userPhone, "", new { @class = "text-danger" })
+            </td>
+            </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.dateOfBirth, "DOB")
+            </td>
+            <td>
+                @Html.EditorFor(model => model.dateOfBirth)
+                @Html.ValidationMessageFor(model => model.dateOfBirth, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="SignUp"/>
+            </td>
+        </tr>
+    </table>
+}

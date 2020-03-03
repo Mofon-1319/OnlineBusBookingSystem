@@ -1,0 +1,37 @@
+﻿@model OnlineBusBookingSystem.Models.Customer_Login
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "User", FormMethod.Post))
+{
+    <table cellpadding="10">
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.userId, "Email Id")
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.userId)
+                @Html.ValidationMessageFor(model => model.userId, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Password")
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.userPassword)
+                @Html.ValidationMessageFor(model => model.userPassword, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" id="Add" />
+            </td>
+
+        </tr>
+    </table>
+}
