@@ -3,18 +3,18 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="~/Content/Site.css" type="text/css" rel="stylesheet"/>
-   <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" type="text/css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
 </head>
-<body>
-    <div>
-        @RenderBody()
-    </div>
-    <div>
-        <hr />
+<body class="main">
+        <div class="header">
+            <h2>Online Bus Booking System</h2>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
         <footer>
             <p>&copy; @DateTime.Now.Year - Mohanraj</p>
         </footer>
-    </div>
 </body>
 </html>

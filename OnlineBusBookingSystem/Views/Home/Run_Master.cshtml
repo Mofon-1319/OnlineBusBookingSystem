@@ -4,8 +4,10 @@
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
 
-<h2>Home</h2>
 <div class="nav-bar">
-    @Html.ActionLink("SignUp", "Register", "User")
-    @Html.ActionLink("SignIn", "Login", "User")
+        @Html.ActionLink("SignUp", "Register", "User",null,new { @class="nav-link" })
+        @Html.ActionLink("SignIn", "Login", "User",null, new { @class = "nav-link" })
+    </div>
+<div>
+    <img src="~/Images/fullbus.jpg"/>
 </div>

@@ -130,6 +130,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\black-and-blue-rays.jpg" />
+    <Content Include="Images\fullbus.jpg" />
+    <Content Include="Images\preview.jpg" />
+    <Content Include="Images\reg-back.jpg" />
+    <Content Include="Images\reg.jpg" />
+    <Content Include="Images\regg.jpg" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
