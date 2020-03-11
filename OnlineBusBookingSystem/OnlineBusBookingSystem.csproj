@@ -168,6 +168,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BusModel.cs" />
+    <Compile Include="Models\BusScheduleModel.cs" />
     <Compile Include="Models\Customer_Login.cs" />
     <Compile Include="Models\Customer_Register.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

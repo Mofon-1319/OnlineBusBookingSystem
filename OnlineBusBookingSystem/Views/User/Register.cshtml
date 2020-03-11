@@ -7,6 +7,10 @@
 
 @using (Html.BeginForm("Register", "User", FormMethod.Post))
 {
+    if(TempData["User_Exists"]!=null)
+    {
+        <p>@TempData["User_Exists"]</p>
+    }
     <div>
         <table class="forms" cellpadding="18" align="center">
             <tr>

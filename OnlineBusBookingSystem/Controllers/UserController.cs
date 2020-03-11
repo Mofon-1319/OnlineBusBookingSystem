@@ -32,20 +32,28 @@ namespace OnlineBusBookingSystem.Controllers
         [ActionName("Register")]
         public ActionResult Register_Post(Customer_Register customer_Model)
         {
-            if(ModelState.IsValid)
+            try
             {
-                Customer customer = new Customer
+                if (ModelState.IsValid)
                 {
-                    userName = customer_Model.userName,
-                    userGender = customer_Model.userGender,
-                    userId = customer_Model.userId,
-                    userPassword = customer_Model.userPassword,
-                    userPhone = customer_Model.userPhone,
-                    dateOfBirth = customer_Model.dateOfBirth,
-                    role = "User"
-                };
-                user_Details.Add(customer);
-                return RedirectToAction("Login");
+                    Customer customer = new Customer
+                    {
+                        userName = customer_Model.userName,
+                        userGender = customer_Model.userGender,
+                        userId = customer_Model.userId,
+                        userPassword = customer_Model.userPassword,
+                        userPhone = customer_Model.userPhone,
+                        dateOfBirth = customer_Model.dateOfBirth,
+                        role = "User"
+                    };
+                    user_Details.Add(customer);
+                    TempData["User_Exists"] = null;
+                    return RedirectToAction("Login");
+                }
+            }
+            catch (Exception)
+            {
+                TempData["User_Exists"] = "User already exists";
             }
             return View();
         }
