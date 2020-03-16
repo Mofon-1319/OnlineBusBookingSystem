@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -169,7 +170,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BusModel.cs" />
-    <Compile Include="Models\BusScheduleModel.cs" />
     <Compile Include="Models\Customer_Login.cs" />
     <Compile Include="Models\Customer_Register.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,6 +189,7 @@
     <Content Include="Views\Bus\Manage_Bus.cshtml" />
     <Content Include="Views\Bus\Book.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Bus\Add_Bus.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

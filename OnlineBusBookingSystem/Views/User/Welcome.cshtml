@@ -3,25 +3,27 @@
     ViewBag.Title = "Welcome";
 }
 
+<div class="nav-bar">
+    @using (Html.BeginForm())
+    {
+        @Html.ActionLink("LogOut", "Run_Master", "Home", null, new { @class = "nav-link" })
+        try
+        {
+            if (OnlineBusBookingSystem.Controllers.UserController.currentUser.role == "Admin")
+            {
+                @Html.ActionLink("Manage User", "Manage_User", "Admin", null, new { @class = "nav-link" })
+                @Html.ActionLink("Manage Bus", "Manage_Bus", "Bus", null, new { @class = "nav-link" })
+            }
+            else if (OnlineBusBookingSystem.Controllers.UserController.currentUser.role == "User")
+            {
+                @Html.ActionLink("Book Bus", "Book", "Bus", null, new { @class = "nav-link" })
+            }
+        }
+        catch (Exception)
+        {
+
+        }
+    }
+</div>
+
 <h2>Welcome</h2>
-
-@using (Html.BeginForm())
-{
-    @Html.ActionLink("LogOut","Login","User")
-    try
-    {
-        if (OnlineBusBookingSystem.Controllers.UserController.currentUser.role == "Admin")
-        {
-            @Html.ActionLink("Manage User", "Manage_User", "Admin")
-            @Html.ActionLink("Manage Bus", "Manage_Bus", "Bus")
-        }
-        else if (OnlineBusBookingSystem.Controllers.UserController.currentUser.role == "User")
-        {
-            @Html.ActionLink("Book Bus", "Book", "Bus")
-        }
-    }
-    catch(Exception)
-    {
-
-    }
-}

@@ -49,6 +49,38 @@ footer {
         color: #000000;
     }
 
+.back {
+    text-decoration: none;
+    background-color: Highlight;
+    color: black;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline;
+}
+
+    .back:hover {
+        background-color: deepskyblue;
+        color: black;
+    }
+
+.tools {
+    text-decoration: none;
+    border:solid;
+    border-radius:5px;
+    border-color:Highlight;
+    color: black;
+    padding:8px 4px;
+    text-align: center;
+    display: inline;
+}
+
+    .tools:hover {
+        border: solid;
+        border-radius: 5px;
+        border-color: deepskyblue;
+        color: black;
+    }
+
 .register {
     background-image: url("../Images/reg-back.jpg");
     background-repeat: no-repeat;

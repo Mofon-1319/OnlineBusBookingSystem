@@ -9,27 +9,25 @@ namespace OnlineBusBookingSystem.DAL
 {
     public class BusRepository
     {
+        public IEnumerable<Bus> CreateDB()
+        {
+            using (UserContext context = new UserContext())
+            {
+                return context.bus.ToList();
+            }
+        }
         public void AddBus(Bus bus)
         {
-            using (BusContext context = new BusContext())
+            using (UserContext context = new UserContext())
             {
                 context.bus.Add(bus);
                 context.SaveChanges();
             }
         }
 
-        public void AddBusSchedule(BusSchedule schedule)
-        {
-            using (BusContext context = new BusContext())
-            {
-                context.busSchedule.Add(schedule);
-                context.SaveChanges();
-            }
-        }
-
         public IEnumerable<Bus> GetBus()
         {
-            using (BusContext context = new BusContext())
+            using (UserContext context = new UserContext())
             {
                 return context.bus.ToList();
             }

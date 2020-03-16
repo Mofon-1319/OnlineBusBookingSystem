@@ -13,15 +13,18 @@ namespace OnlineBusBookingSystem.Controllers
     {
         // GET: Bus
         BusRepository busRepository = new BusRepository();
+        IEnumerable<Bus> busList;
         public ActionResult Manage_Bus()
         {
-            return View();
+            busList = busRepository.GetBus();
+            return View(busList);
         }
 
         [HttpGet]
         public ActionResult Add_Bus()
         {
-            ViewBag.Bus = new SelectList(busRepository.GetBus(), "BusId", "BusNo");
+            IEnumerable<Bus> bus = busRepository.CreateDB();
+            //ViewBag.Bus = new SelectList(busRepository.GetBus(), "BusId", "BusNo");
             return View();
         }
         [HttpPost]
@@ -31,8 +34,6 @@ namespace OnlineBusBookingSystem.Controllers
             ViewBag.Bus = new SelectList(busRepository.GetBus(), "BusId", "BusNo");
             bus.BusId = busModel.BusId;
             bus.BusNo = busModel.BusNo;
-            bus.AvailableSeat = busModel.AvailableSeat;
-            bus.BookedSeat = busModel.BookedSeat;
             bus.TotalSeat = busModel.TotalSeat;
             bus.Rate = busModel.Rate;
             busRepository.AddBus(bus);

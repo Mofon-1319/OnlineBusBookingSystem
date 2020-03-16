@@ -74,18 +74,6 @@ namespace OnlineBusBookingSystem.Controllers
             };
             currentUser = user_Details.login(customer);
             return RedirectToAction("Welcome",currentUser);
-            //if(role == "Admin")
-            //{
-            //    return RedirectToAction("Manage_User", "Admin");
-            //}
-            //else if(role == "User")
-            //{
-            //    return RedirectToAction("Welcome");
-            //}
-            //else
-            //{
-            //    return View();
-            //}
         }
 
         public ActionResult Welcome()

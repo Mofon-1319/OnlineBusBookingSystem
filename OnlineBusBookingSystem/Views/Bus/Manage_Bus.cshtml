@@ -1,8 +1,85 @@
-﻿
+﻿@model  IEnumerable<OnlineBusBookingSystem.Entity.Bus>
+
 @{
     ViewBag.Title = "Manage_Bus";
 }
 
 <h2>Manage_Bus</h2>
 
-@Html.ActionLink("Back","Admin")
+<table cellpadding="8" cellspacing="10" border="1">
+    <tr>
+        <th>
+            BusId
+        </th>
+        <th>
+            BusNo
+        </th>
+        <th>
+            Arrival Time
+        </th>
+        <th>
+            Departure Time
+        </th>
+        <th>
+            Source
+        </th>
+        <th>
+            Destination
+        </th>
+        <th>
+            Total Seat
+        </th>
+        <th>
+            Available Seat
+        </th>
+        <th>
+            Booked Seat
+        </th>
+        <th>
+            Rate
+        </th>
+    </tr>
+    @foreach (OnlineBusBookingSystem.Entity.Bus item in Model)
+    {
+        <tr>
+            <td>
+                item.BusId
+            </td>
+            <td>
+                item.BusNo
+            </td>
+            <td>
+                item.Arrival Time
+            </td>
+            <td>
+                item.Departure Time
+            </td>
+            <td>
+                item.Source
+            </td>
+            <td>
+                item.Destination
+            </td>
+            <td>
+                item.Total Seat
+            </td>
+            <td>
+                item.Available Seat
+            </td>
+            <td>
+                item.Booked Seat
+            </td>
+            <td>
+                item.Rate
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { busId = item.BusId }, new { @class = "tools" })
+                @Html.ActionLink("Delete", "Delete", new { busId = item.BusId }, new { @class = "tools" })
+            </td>
+        </tr>
+    }
+</table>
+<div style="padding-top:20px;">
+    @Html.ActionLink("Back", "Welcome", "User", null, new { @class = "back" })
+    @Html.ActionLink("Add","Add_Bus","Bus",null,new { @class = "back" })
+</div>

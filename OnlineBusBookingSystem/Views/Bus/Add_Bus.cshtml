@@ -1,0 +1,31 @@
+﻿@model OnlineBusBookingSystem.Models.BusModel
+    @{
+        ViewBag.Title = "Add_Bus";
+    }
+
+    <h2>Add_Bus</h2>
+
+    <form class="forms">
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.BusType, "Bus Type")
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.BusType)
+                    @Html.ValidationMessageFor(model => model.BusType, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.BusNo, "Registration No.")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.EditorFor(model => model.BusNo)
+                    @Html.ValidationMessageFor(model => model.BusNo, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+        </table>
+    </form>

@@ -16,7 +16,7 @@ namespace OnlineBusBookingSystem.DAL
         }
         public DbSet<Customer> user {get; set;}
         public DbSet<Bus> bus { get; set; }
-        public DbSet<BusSchedule> busSchedule { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Bus>().MapToStoredProcedures();

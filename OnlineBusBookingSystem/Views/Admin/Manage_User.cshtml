@@ -6,8 +6,8 @@
 
 <h2>Manage_User</h2>
 
-<table cellpadding="8" cellspacing="10" border="1">
-    
+<table cellpadding="8" cellspacing="10" border="0">
+
     <tr>
         <th>
             UserId
@@ -55,11 +55,13 @@
             <td>
                 @item.role
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { userId = item.userId })
-                @Html.ActionLink("Delete", "Delete", new { userId = item.userId })
+            <td >
+                @Html.ActionLink("Edit", "Edit", new { userId = item.userId },new { @class = "tools" })
+                @Html.ActionLink("Delete", "Delete", new { userId = item.userId },new { @class = "tools" })
             </td>
         </tr>
     }
 </table>
-@Html.ActionLink("Back", "Welcome","User")
+<div style="padding-top:20px;">
+    @Html.ActionLink("Back", "Welcome", "User", null, new { @class = "back" })
+</div>
